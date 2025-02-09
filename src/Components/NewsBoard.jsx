@@ -6,8 +6,7 @@ function NewsBoard({category}) {
     useEffect(()=>{
         const fetchNews = async () => {
             try {
-                const apiKey = import.meta.env.VITE_NEWS_API_KEY; // Load from .env file
-                let url = `https://newsapi.org/v2/everything?q=${category}&apiKey=b4a5455d668e46d6b313d09f8bb98d33`;
+                let url = `https://newsapi.org/v2/everything?q=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
 
                 const response = await fetch(url);
                 if (!response.ok) throw new Error("Failed to fetch news");
